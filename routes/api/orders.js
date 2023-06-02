@@ -6,4 +6,8 @@ const router = express.Router()
 
 router.patch('/', controllerWrapper(ctrl.addOrder))
 
+router.get('/', controllerWrapper(ctrl.getAllOrdersByQuery))
+
+router.get('/:orderId', controllerWrapper(ctrl.getOrderById))
+
 module.exports = router

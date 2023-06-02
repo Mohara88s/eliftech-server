@@ -1,4 +1,4 @@
-const { Shop, Good } = require("../../models");
+const { Shop } = require("../../models");
 const { NotFound } = require("http-errors");
 
 const getAllShops = async (req, res, next) => {

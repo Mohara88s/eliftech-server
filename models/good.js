@@ -11,6 +11,10 @@ const GoodSchema = Schema(
 			type: Number,
 			required: [true, "Set the good price"],
 		},
+		picture: {
+			type: String,
+			required: [true, "Set the link for the picture"],
+		},
 	},
 	{ versionKey: false, timestamps: true }
 );
