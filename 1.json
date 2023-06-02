@@ -1,0 +1,42 @@
+[
+    {
+      "name": "Big Mac",
+      "price": 5.99
+    },
+    {
+      "name": "French Fries",
+      "price": 2.49
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "price": 9.99
+    },
+    {
+      "name": "Veggie Delite",
+      "price": 5.99
+    },
+    {
+      "name": "Whopper",
+      "price": 6.99
+    },
+    {
+      "name": "Original Recipe Chicken",
+      "price": 7.99
+    },
+    {
+      "name": "Caramel Frappuccino",
+      "price": 4.99
+    },
+    {
+      "name": "Crunchwrap Supreme",
+      "price": 3.99
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "price": 11.99
+    },
+    {
+      "name": "Spicy Chicken Sandwich",
+      "price": 5.49
+    }
+  ]
