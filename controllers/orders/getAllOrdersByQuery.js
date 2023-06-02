@@ -2,12 +2,12 @@ const { Order } = require("../../models");
 const { NotFound } = require("http-errors");
 
 
-const getOrdersByQuery = async (req, res, next) => {
+const getAllOrdersByQuery = async (req, res, next) => {
 	const { page = 1, limit = 20, email = "", phone = "" } = req.query;
 	const skip = (page - 1) * limit;
 
 	const querySt = (email.length) ? { "email": email } :
-		{ "phone": { phone } }
+		{ "phone": phone }
 
 	const orders = await Order.find(querySt)
 		.populate({
@@ -25,4 +25,4 @@ const getOrdersByQuery = async (req, res, next) => {
 	});
 };
 
-module.exports = getOrdersByQuery;
+module.exports = getAllOrdersByQuery;
