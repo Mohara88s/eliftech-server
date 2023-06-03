@@ -2,15 +2,15 @@ const { Order} = require("../../models");
 const { BadRequest} = require("http-errors");
 
 const addOrder = async (req, res, next) => {
-	const { name, email, phone, address, shop, price, cart } = req.body;
+	const { name, email:notUpdatedEmail, phone, address, shop, price, cart } = req.body;
 	if (!name) {
 		throw new BadRequest("The name is required");
 	}
-	if (!email) {
+	if (!notUpdatedEmail) {
 		throw new BadRequest("The email is required");
 	}
 	if (!phone) {
-		throw new BadRequest("The nphoneis required");
+		throw new BadRequest("The phone is required");
 	}
 	if (!address) {
 		throw new BadRequest("The address is required");
@@ -24,6 +24,7 @@ const addOrder = async (req, res, next) => {
 	if (!cart.length) {
 		throw new BadRequest("No goods in cart");
 	}
+	const email = notUpdatedEmail.toLowerCase()
 	const newOrder = new Order({
 		name, email, phone, address, shop, price, cart 
 	});

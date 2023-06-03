@@ -3,8 +3,9 @@ const { NotFound } = require("http-errors");
 
 
 const getAllOrdersByQuery = async (req, res, next) => {
-	const { page = 1, limit = 20, email = "", phone = "" } = req.query;
+	const { page = 1, limit = 20, email:notUpdatedEmail = "", phone = "" } = req.query;
 	const skip = (page - 1) * limit;
+	const email = notUpdatedEmail.toLowerCase()
 
 	const querySt = (email.length) ? { "email": email } :
 		{ "phone": phone }
