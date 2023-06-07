@@ -8,7 +8,7 @@ const getAllOrdersByQuery = async (req, res, next) => {
 	const email = notUpdatedEmail.toLowerCase()
 
 	const querySt = (email.length) ? { "email": email } :
-		{ "phone": phone }
+		{ "phone": { $regex: `${(phone[0] === ' ') ? phone.slice(1) : phone}`} }
 
 	const orders = await Order.find(querySt)
 		.populate({
